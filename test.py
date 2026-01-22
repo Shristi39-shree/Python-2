@@ -1,7 +1,5 @@
-## this is a single line comment
-'''
-this is an example of multiline commnet
-'''
-'''
-welcome to the python course
-'''
+from package.maths import *
+
+print(addition(6,7))
+print(sub(9,8))
+print(multiply(5,6))
