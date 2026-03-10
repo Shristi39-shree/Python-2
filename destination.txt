@@ -1,0 +1,8 @@
+Hello world!
+Append operation taking place!
+First line 
+Second line 
+Third line
+First line 
+Second line 
+Third line
