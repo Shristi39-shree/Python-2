@@ -1,3 +1,14 @@
+### Building Url Dynamically
+## Variable Rule 
+### Jinja 2 Template Engine 
+
+### Jinja2 Template Engine
+'''
+{{ }} expression to print output in html
+{%...%} conditions, for loops
+{#...#}this is for comments
+'''
+
 from flask import Flask,render_template,request
 '''
 It creates an instance of the Flask class,which will be your WSGI(Web Server Gateway Interface) application.
@@ -30,6 +41,31 @@ def form():
     name = request.form['name']
     return f'Hello {name}!'
   return render_template('form.html')
+
+## Variable Rule
+@app.route('/success/<int:score>')
+def success(score):
+  res=""
+  if score>=50:
+    res = "PASSED"
+  else:
+    res="FAILED"
+
+  return render_template('result.html',results=res)  
+
+
+## Variable Rule
+@app.route('/successres/<int:score>')
+def successres(score):
+  res=""
+  if score>=50:
+    res = "PASSED"
+  else:
+    res="FAILED"
+
+    exp ={'score':score,"res":res}
+
+  return render_template('result.html',results=score)  
 
 if __name__=="__main__":
   app.run( debug=True)
